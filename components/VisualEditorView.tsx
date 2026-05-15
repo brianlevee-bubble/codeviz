@@ -1121,7 +1121,7 @@ export function VisualEditorView() {
                   </p>
                 )}
                 {selected.textContent && (
-                  <p className="text-[9px] text-slate-400 mt-0.5 italic truncate">"{selected.textContent}"</p>
+                  <p className="text-[9px] text-slate-400 mt-0.5 italic truncate">&quot;{selected.textContent}&quot;</p>
                 )}
 
                 {/* Scope toggle — only shown in Style tab */}

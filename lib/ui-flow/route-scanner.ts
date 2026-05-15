@@ -197,7 +197,7 @@ ${routeSources.map(({ route, source }) =>
   `\n=== ${route.path} (${route.file}) ===\n${source.slice(0, 6000)}`
 ).join('\n')}`;
 
-  let edges: UINavEdge[] = [];
+  const edges: UINavEdge[] = [];
   try {
     const msg = await client.messages.create({
       model: 'claude-opus-4-6',

@@ -250,8 +250,8 @@ function ConfigKeyEditor({
 // ─── Plan preview ─────────────────────────────────────────────────────────────
 
 function PlanPreview({
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   plan, loading, onApply, onDiscard,
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: { plan: any; loading: boolean; onApply: () => void; onDiscard: () => void }) {
   return (
     <div className="border-t border-slate-100 bg-slate-50 p-3 space-y-2">

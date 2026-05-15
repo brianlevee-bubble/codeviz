@@ -56,7 +56,7 @@ function ValueNode({ val, depth = 0 }: { val: unknown; depth?: number }) {
     if (s.startsWith('[') && s.endsWith(']')) {
       return <span className="text-slate-400 text-[10px] italic">{s}</span>;
     }
-    return <span className="text-emerald-700 text-[10px]">"{s.length > 60 ? s.slice(0, 60) + '…' : s}"</span>;
+    return <span className="text-emerald-700 text-[10px]">&quot;{s.length > 60 ? s.slice(0, 60) + '…' : s}&quot;</span>;
   }
   if (t === 'number') return <span className="text-blue-600 text-[10px]">{String(val)}</span>;
   if (t === 'boolean') return <span className="text-purple-600 text-[10px]">{String(val)}</span>;
