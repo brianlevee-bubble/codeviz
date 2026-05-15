@@ -8,7 +8,7 @@ import type {
 } from '@/lib/auth/types';
 import {
   Loader2, AlertCircle, RefreshCw, KeyRound, ShieldCheck, ShieldAlert,
-  Lock, Mail, Github, Globe, Smartphone, Database, Key, Users,
+  Lock, Mail, Globe, Smartphone, Database, Key, Users,
   ChevronDown, ChevronRight, CheckCircle2, XCircle, AlertTriangle,
   Info, ExternalLink, Zap, Settings,
 } from 'lucide-react';
@@ -19,7 +19,7 @@ const FEATURE_CONFIG: Record<AuthFeature, { label: string; icon: React.ElementTy
   email_password:    { label: 'Email & Password',   icon: Mail,       color: 'text-blue-600',   bg: 'bg-blue-50 border-blue-200' },
   magic_link:        { label: 'Magic Link',         icon: Zap,        color: 'text-purple-600', bg: 'bg-purple-50 border-purple-200' },
   oauth_google:      { label: 'Google OAuth',       icon: Globe,      color: 'text-red-600',    bg: 'bg-red-50 border-red-200' },
-  oauth_github:      { label: 'GitHub OAuth',       icon: Github,     color: 'text-slate-700',  bg: 'bg-slate-50 border-slate-200' },
+  oauth_github:      { label: 'GitHub OAuth',       icon: Key,        color: 'text-slate-700',  bg: 'bg-slate-50 border-slate-200' },
   oauth_microsoft:   { label: 'Microsoft OAuth',    icon: Globe,      color: 'text-blue-700',   bg: 'bg-blue-50 border-blue-200' },
   oauth_apple:       { label: 'Apple Sign-In',      icon: Globe,      color: 'text-slate-800',  bg: 'bg-slate-50 border-slate-200' },
   oauth_other:       { label: 'Other OAuth',        icon: Globe,      color: 'text-slate-600',  bg: 'bg-slate-50 border-slate-200' },
@@ -444,7 +444,7 @@ export function AuthView() {
                 <ProviderCard
                   key={p.provider}
                   provider={p}
-                  isDetected={hasAuth && detected?.provider === p.provider}
+                  isDetected={!!(hasAuth && detected?.provider === p.provider)}
                   isSelected={selectedProvider === p.provider}
                   onClick={() => setSelectedProvider(p.provider)}
                 />

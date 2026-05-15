@@ -94,7 +94,8 @@ export async function POST(request: Request) {
         }),
       ]);
 
-      const cookies: Protocol.Network.Cookie[] = await page.cookies();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const cookies = await page.cookies() as any as Protocol.Network.Cookie[];
       return Response.json({ cookies });
     } finally {
       await browser.close();
